@@ -1,0 +1,2 @@
+source ~/.zshprompt
+source ~/.aliases

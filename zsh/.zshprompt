@@ -1,0 +1,27 @@
+# Terminal Prompt
+
+# Blink
+PROMPT="$(tput setaf 3)$(tput blink)%F{9}⚡%f$(tput sgr0)"
+
+# "[CLOUD]" Prefix
+PROMPT+="%F{159}[CLOUD]%f "
+# Make "[CLOUD]" blink
+# PROMPT="$(tput setaf 3)$(tput blink)%F{159}[CLOUD]%f$(tput sgr0) "
+
+# Username
+PROMPT+="%F{214}%n%f "
+
+# Current Directory
+PROMPT+="%F{203}[%f%F{203}%~%f%F{203}]%f"
+
+# Git
+git_branch() {
+	git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+PROMPT+="%F{192}$(git_branch)%f "
+
+# End
+PROMPT+="$ "
+
+setopt PROMPT_SUBST
+export PROMPT

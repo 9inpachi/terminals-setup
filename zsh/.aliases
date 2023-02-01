@@ -1,0 +1,7 @@
+# Emacs
+
+alias e=emacs
+
+# Vim
+
+alias vim='/apollo/env/envImprovement/bin/vim'
