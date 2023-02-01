@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Configuration
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+# Terminal Prompt
+
+# Username
+PS1="\[\e[0;93m\]\u\[\e[m\] "
+
+# Current Directory
+PS1+="\[\e[0;91m\]["
+PS1+="\[\e[0;91m\]\w\[\e[0;91m\]"
+PS1+="]\[\e[m\]"
+
+# Git
+git_branch() {
+  git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+PS1+="\[\e[0;92m\]\$(git_branch)\[\e[m\] "
+
+# End
+PS1+="$ "
+
+export PS1
