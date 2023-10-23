@@ -1,5 +1,5 @@
 source ~/.bash_prompt
-source ~/.aliases
+source ~/.bash_aliases
 
 if [ -f ~/.bashrc ]; then
 	source ~/.bashrc

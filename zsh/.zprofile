@@ -1,2 +1,2 @@
 source ~/.zshprompt
-source ~/.aliases
+source ~/.zaliases
